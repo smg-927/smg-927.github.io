@@ -1,0 +1,53 @@
+---
+layout: default
+title: 태그
+permalink: /tags/
+---
+
+<div style="padding: 40px 0 32px;">
+  <h1 style="font-size: 28px; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 8px;">태그 모음</h1>
+  <p style="color: var(--text-muted); font-size: 14px;">주제별로 포스트를 탐색하세요.</p>
+</div>
+
+<!-- All Tags -->
+<section style="margin-bottom: 48px;">
+  <div class="section-heading">모든 태그</div>
+  <div class="tags-cloud">
+    {% assign all_tags = site.posts | map: 'tags' | join: ',' | split: ',' | uniq | sort %}
+    {% for tag in all_tags %}
+      {% assign count = 0 %}
+      {% for post in site.posts %}
+        {% if post.tags contains tag %}
+          {% assign count = count | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+      <a href="#{{ tag }}" class="tag-pill"># {{ tag }} <span style="opacity:0.5">({{ count }})</span></a>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Posts by Tag -->
+{% assign all_tags = site.posts | map: 'tags' | join: ',' | split: ',' | uniq | sort %}
+{% for tag in all_tags %}
+  <section id="{{ tag }}" style="margin-bottom: 48px; scroll-margin-top: 80px;">
+    <div class="section-heading"># {{ tag }}</div>
+    <div class="posts-list">
+      {% for post in site.posts %}
+        {% if post.tags contains tag %}
+          <a href="{{ post.url | relative_url }}" class="post-card">
+            <div>
+              <div class="post-meta">
+                <span class="post-date">{{ post.date | date: '%Y.%m.%d' }}</span>
+              </div>
+              <div class="post-title">{{ post.title }}</div>
+              {% if post.description %}
+                <div class="post-excerpt">{{ post.description }}</div>
+              {% endif %}
+            </div>
+            <span class="post-arrow">→</span>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+{% endfor %}

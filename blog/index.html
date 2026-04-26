@@ -1,0 +1,69 @@
+---
+layout: default
+---
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-tag">최신 업데이트</div>
+  <h1>코드로 생각을,<br><em>글로 기록합니다</em></h1>
+  <p>개발하며 배운 것들, 마주친 문제들, 그리고 그 해결 과정을 공유합니다.</p>
+</section>
+
+<!-- Recent Posts -->
+<section>
+  <div class="section-heading">최근 포스트</div>
+
+  <div class="posts-list">
+    {% for post in site.posts limit: 10 %}
+      <a href="{{ post.url | relative_url }}" class="post-card">
+        <div>
+          <div class="post-meta">
+            {% if post.tags.size > 0 %}
+              <span class="post-tag">{{ post.tags[0] }}</span>
+            {% endif %}
+            <span class="post-date">{{ post.date | date: '%Y.%m.%d' }}</span>
+          </div>
+          <div class="post-title">{{ post.title }}</div>
+          {% if post.description %}
+            <div class="post-excerpt">{{ post.description }}</div>
+          {% else %}
+            <div class="post-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</div>
+          {% endif %}
+        </div>
+        <span class="post-arrow">→</span>
+      </a>
+    {% endfor %}
+  </div>
+
+  {% if site.posts.size == 0 %}
+    <p style="color: var(--text-muted); font-family: var(--font-mono); font-size: 13px; padding: 40px 0; text-align: center;">
+      // 아직 작성된 포스트가 없습니다.<br>
+      // _posts 폴더에 마크다운 파일을 추가해보세요.
+    </p>
+  {% endif %}
+</section>
+
+<!-- About Card -->
+<section>
+  <div class="section-heading">작성자</div>
+  <div class="about-card">
+    <div class="about-avatar">👨‍💻</div>
+    <div>
+      <div class="about-name">{{ site.author }}</div>
+      <div class="about-role">// Software Developer</div>
+      <p class="about-bio">{{ site.description }}</p>
+      <div class="about-links">
+        {% if site.github_username %}
+          <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">
+            ↗ GitHub
+          </a>
+        {% endif %}
+        {% if site.email %}
+          <a href="mailto:{{ site.email }}">
+            ↗ Email
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

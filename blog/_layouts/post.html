@@ -1,0 +1,51 @@
+---
+layout: default
+---
+
+<article>
+  <header class="post-header">
+    <div class="post-meta">
+      {% if page.tags.size > 0 %}
+        <span class="post-tag">{{ page.tags[0] }}</span>
+      {% endif %}
+      <span class="post-date">{{ page.date | date: '%Y.%m.%d' }}</span>
+      <span class="post-date">· {{ content | reading_time }} min read</span>
+    </div>
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}
+      <p class="post-description">{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  <!-- Tags -->
+  {% if page.tags.size > 0 %}
+    <div style="margin-bottom: 48px;">
+      <div class="section-heading">태그</div>
+      <div class="tags-cloud">
+        {% for tag in page.tags %}
+          <a href="{{ '/tags#' | append: tag | relative_url }}" class="tag-pill"># {{ tag }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+
+  <!-- Navigation -->
+  <div style="display: flex; justify-content: space-between; gap: 16px; margin-bottom: 64px; padding-top: 24px; border-top: 1px solid var(--border);">
+    {% if page.previous.url %}
+      <a href="{{ page.previous.url | relative_url }}" style="text-decoration: none; font-size: 13px; font-family: var(--font-mono); color: var(--text-muted); transition: color 0.2s; max-width: 45%;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">
+        ← {{ page.previous.title }}
+      </a>
+    {% else %}
+      <span></span>
+    {% endif %}
+    {% if page.next.url %}
+      <a href="{{ page.next.url | relative_url }}" style="text-decoration: none; font-size: 13px; font-family: var(--font-mono); color: var(--text-muted); transition: color 0.2s; max-width: 45%; text-align: right;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">
+        {{ page.next.title }} →
+      </a>
+    {% endif %}
+  </div>
+</article>
