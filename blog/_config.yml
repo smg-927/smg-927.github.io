@@ -1,11 +1,11 @@
-title: "DevLog"
-description: "개발자의 기술 블로그 — 코드, 배움, 그리고 생각들"
-author: "Your Name"
-email: "your@email.com"
-github_username: "yourusername"
+title: "BloomerLab"
+description: "게임 개발 취준생의 블로그"
+author: "Song mingyu"
+email: "smg927@daum.net"
+github_username: "smg-927"
 twitter_username: ""
 
-url: "https://yourusername.github.io"
+url: "https://smg-927.github.io"
 baseurl: ""
 
 # Build settings
