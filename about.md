@@ -10,28 +10,24 @@ permalink: /about/
   <p style="font-size: 16px; color: var(--text-muted); line-height: 1.8; max-width: 540px;">저는 <strong style="color: var(--text);">{{ site.author }}</strong>입니다. 영화, 힙합, 게임을 사랑합니다.</p>
 </div>
 
+<div style="padding: 40px 0 48px;">
+  <div class="hero-tag">About</div>
+  <h1 style="font-size: clamp(24px, 4vw, 36px); font-weight: 700; letter-spacing: -0.03em; margin: 16px 0 12px;">안녕하세요 👋</h1>
+  <p style="font-size: 16px; color: var(--text-muted); line-height: 1.8; max-width: 540px;">저는 <strong style="color: var(--text);">{{ site.author }}</strong>입니다. 영화, 힙합, 게임을 사랑합니다.</p>
+</div>
+
 <div class="prose">
+  <h2>블로그에 대해</h2>
+  <p>주인장의 공부 노트이자 개인 기록장입니다.</p>
+  <p>주로 다루는 내용:</p>
+  <ul>
+    <li><strong style="color: var(--accent);">유니티 게임개발</strong> — 프로젝트 & 각종 기술들</li>
+    <li><strong style="color: var(--accent);">그래픽스</strong> — OpenGL, DirectX, Shader Programming</li>
+    <li><strong style="color: var(--accent);">일상</strong> — 게임 리뷰, 영화 리뷰 등등</li>
+  </ul>
 
-**블로그에 대하여**
-
-주인장의 공부 노트이자 개인 기록장입니다.
-</div>
-
-주로 다루는 내용:
-</div>
-
-- 유니티 게임개발 — 프로젝트 & 각종 기술들 
-
-</div>
-- 그래픽스 — OpenGL, DirectX, Shader Programming
-
-</div>
-- 일상 — 게임 리뷰, 영화 리뷰 등등
-
-</div>
-
-**연락하기**
-
+  <h2>연락하기</h2>
+  <p>궁금한 점이나 이야기하고 싶은 내용이 있다면 편하게 연락주세요.</p>
 </div>
 
 <div class="about-links" style="gap: 16px; flex-wrap: wrap;">
