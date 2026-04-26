@@ -18,9 +18,11 @@ permalink: /about/
 
 주로 다루는 내용:
 
-- 유니티 게임개발 - 프로젝트 & 각종 기술들
-- 그래픽스 - OpenGL, DirectX, Shader Programming
-- 일상 - 게임 리뷰, 영화 리뷰 등등 
+- 유니티 게임개발 — 프로젝트 & 각종 기술들
+
+- 그래픽스 — OpenGL, DirectX, Shader Programming
+
+- 일상 — 게임 리뷰, 영화 리뷰 등등
 
 ## 연락하기
 
