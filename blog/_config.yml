@@ -11,7 +11,6 @@ baseurl: ""
 # Build settings
 markdown: kramdown
 highlighter: rouge
-theme: null
 plugins:
   - jekyll-feed
   - jekyll-sitemap
