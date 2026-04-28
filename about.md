@@ -6,8 +6,8 @@ permalink: /about/
 
 <div style="padding: 40px 0 48px;">
   <div class="hero-tag">About</div>
-  <h1 style="font-size: clamp(24px, 4vw, 36px); font-weight: 700; letter-spacing: -0.03em; margin: 16px 0 12px;">안녕하세요 👋</h1>
-  <p style="font-size: 16px; color: var(--text-muted); line-height: 1.8; max-width: 540px;">저는 <strong style="color: var(--text);">{{ site.author }}</strong>입니다. 영화, 힙합, 게임을 좋아합니다.</p>
+  <h1 style="font-size: clamp(24px, 4vw, 36px); font-weight: 700; letter-spacing: -0.03em; margin: 16px 0 12px;">물리학 + 미디어 전공 게임개발자👋</h1>
+  <p style="font-size: 16px; color: var(--text-muted); line-height: 1.8; max-width: 540px;">안녕하세요 저는 <strong style="color: var(--text);">{{ site.author }}</strong>입니다. 영화, 힙합, 게임을 좋아합니다.</p>
 </div>
 
 <div class="prose">

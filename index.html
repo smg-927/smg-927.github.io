@@ -30,7 +30,12 @@ layout: default
             <div class="post-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</div>
           {% endif %}
         </div>
-        <span class="post-arrow">→</span>
+        <div class="post-card-right">
+          {% if post.image %}
+            <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="post-card-thumb">
+          {% endif %}
+          <span class="post-arrow">→</span>
+        </div>
       </a>
     {% endfor %}
   </div>
