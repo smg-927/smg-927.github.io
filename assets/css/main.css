@@ -405,6 +405,25 @@ body::before {
   margin: 40px 0;
 }
 
+.prose figure {
+  margin: 32px auto;
+  text-align: center;
+}
+
+.prose figure img {
+  max-width: 80%;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.prose figcaption {
+  margin-top: 10px;
+  font-size: 0.82em;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
 /* ─── Code ───────────────────────────────────────────────── */
 code {
   font-family: var(--font-mono);
