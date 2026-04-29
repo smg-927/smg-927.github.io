@@ -338,21 +338,22 @@ body::before {
 }
 
 .prose h2::before {
-  content: '## ';
-  color: var(--accent);
-  font-family: var(--font-mono);
-  font-size: 14px;
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 0.9em;
+  background: var(--accent);
+  border-radius: 2px;
+  margin-right: 10px;
+  vertical-align: middle;
 }
 
 .prose h3::before {
-  content: '### ';
-  color: var(--text-dim);
-  font-family: var(--font-mono);
-  font-size: 12px;
+  content: '';
 }
 
 .prose p {
-  color: var(--text-muted);
+  color: #c8c8d8;
   margin-bottom: 20px;
   font-size: 15.5px;
   line-height: 1.8;
@@ -376,7 +377,7 @@ body::before {
 
 .prose ul, .prose ol {
   margin: 0 0 20px 24px;
-  color: var(--text-muted);
+  color: #c8c8d8;
 }
 
 .prose li {
