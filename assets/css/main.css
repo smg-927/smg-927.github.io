@@ -314,13 +314,17 @@ body::before {
   margin-bottom: 48px;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   border-radius: var(--radius-lg);
   overflow: hidden;
 }
 
 .post-header-overlay {
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
@@ -434,7 +438,7 @@ body::before {
   text-align: center;
 }
 
-.prose .figure-row {
+.figure-row {
   display: flex;
   gap: 16px;
   justify-content: center;
@@ -442,12 +446,12 @@ body::before {
   margin: 32px 0;
 }
 
-.prose .figure-row figure {
+.figure-row figure {
   flex: 1;
   margin: 0;
 }
 
-.prose .figure-row figure img {
+.figure-row figure img {
   max-width: 100%;
 }
 
@@ -498,6 +502,59 @@ code {
   border: none;
   padding: 0;
   color: inherit;
+}
+
+/* Collapsible code blocks */
+details.code-fold {
+  margin: 24px 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+details.code-fold summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--code-bg);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s;
+  list-style: none;
+}
+
+details.code-fold summary::-webkit-details-marker { display: none; }
+
+details.code-fold summary::before {
+  content: '▶';
+  font-size: 10px;
+  transition: transform 0.2s;
+}
+
+details.code-fold[open] summary::before {
+  transform: rotate(90deg);
+}
+
+details.code-fold[open] summary {
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+}
+
+details.code-fold summary:hover {
+  color: var(--accent);
+}
+
+details.code-fold .highlight {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 /* Rouge Syntax Theme — Custom Dark */
