@@ -55,19 +55,32 @@ layout: default
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.prose .highlight').forEach(function(block) {
-    var rows = block.querySelectorAll('tr');
-    if (rows.length < 12) return;
+  document.querySelectorAll('div.highlighter-rouge, div.highlight:not(.highlighter-rouge div.highlight)').forEach(function(block) {
     var code = block.querySelector('code');
-    var lang = '';
-    if (code) {
-      var m = code.className.match(/language-(\w+)/);
-      if (m) lang = m[1].toUpperCase() + ' ';
+    if (!code) return;
+    var lineCount = (code.textContent.trimEnd().match(/\n/g) || []).length + 1;
+    if (lineCount < 12) return;
+
+    var label = '';
+    var prev = block.previousElementSibling;
+    if (prev) {
+      var nameEl = prev.classList.contains('code-fold-name')
+        ? prev
+        : prev.querySelector('.code-fold-name');
+      if (nameEl) {
+        label = nameEl.textContent.trim();
+        prev.style.display = 'none';
+      }
     }
+    if (!label) {
+      var m = code.className.match(/language-(\w+)/);
+      label = (m ? m[1].toUpperCase() + ' ' : '') + '코드 (' + lineCount + ' lines)';
+    }
+
     var details = document.createElement('details');
     details.className = 'code-fold';
     var summary = document.createElement('summary');
-    summary.textContent = lang + '코드 (' + rows.length + ' lines)';
+    summary.textContent = label;
     details.appendChild(summary);
     block.parentNode.insertBefore(details, block);
     details.appendChild(block);
