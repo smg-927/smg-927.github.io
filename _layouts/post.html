@@ -54,6 +54,28 @@ layout: default
 </article>
 
 <script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.prose .highlight').forEach(function(block) {
+    var rows = block.querySelectorAll('tr');
+    if (rows.length < 12) return;
+    var code = block.querySelector('code');
+    var lang = '';
+    if (code) {
+      var m = code.className.match(/language-(\w+)/);
+      if (m) lang = m[1].toUpperCase() + ' ';
+    }
+    var details = document.createElement('details');
+    details.className = 'code-fold';
+    var summary = document.createElement('summary');
+    summary.textContent = lang + '코드 (' + rows.length + ' lines)';
+    details.appendChild(summary);
+    block.parentNode.insertBefore(details, block);
+    details.appendChild(block);
+  });
+});
+</script>
+
+<script>
   MathJax = {
     tex: {
       inlineMath: [['$', '$'], ['\\(', '\\)']],
