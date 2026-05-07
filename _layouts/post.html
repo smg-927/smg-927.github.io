@@ -3,25 +3,22 @@ layout: default
 ---
 
 <article>
-  {% if page.image %}
-    <div class="post-cover">
-      <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
-    </div>
-  {% endif %}
-
-  <header class="post-header">
-    <div class="post-meta">
-      {% if page.tags.size > 0 %}
-        <span class="post-tag">{{ page.tags[0] }}</span>
+  <div class="post-header-wrapper" {% if page.image %}style="background-image: url('{{ page.image | relative_url }}')"{% endif %}>
+    <div class="post-header-overlay"></div>
+    <header class="post-header">
+      <div class="post-meta">
+        {% if page.tags.size > 0 %}
+          <span class="post-tag">{{ page.tags[0] }}</span>
+        {% endif %}
+        <span class="post-date">{{ page.date | date: '%Y.%m.%d' }}</span>
+        <span class="post-date">· {{ content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
+      </div>
+      <h1>{{ page.title }}</h1>
+      {% if page.description %}
+        <p class="post-description">{{ page.description }}</p>
       {% endif %}
-      <span class="post-date">{{ page.date | date: '%Y.%m.%d' }}</span>
-      <span class="post-date">· {{ content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
-    </div>
-    <h1>{{ page.title }}</h1>
-    {% if page.description %}
-      <p class="post-description">{{ page.description }}</p>
-    {% endif %}
-  </header>
+    </header>
+  </div>
 
   <div class="prose">
     {{ content }}
@@ -55,3 +52,13 @@ layout: default
     {% endif %}
   </div>
 </article>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
