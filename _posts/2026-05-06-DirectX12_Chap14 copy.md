@@ -3,7 +3,7 @@ layout: post
 title: "[3D Programming with DirectX12] Chapter 14 : The Tessellation Stage"
 description: "DirectX12의 Tessellation 대해 소개합니다."
 date: 2026-05-06
-tags: [DirectX12, Beizier Function]
+tags: [DirectX12]
 image: /assets/images/chap14/directX12_represent.jpg
 ---
 
